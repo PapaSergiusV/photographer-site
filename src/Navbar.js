@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 export default class Menu extends Component { 
   render() { 
+    var menu = this.props.menu.map(x => <li key={x.id} className="menu-point"><a href="#">{x.name}</a></li>);  // ADD KEY !!!!!!!
     return (
         <div className="row navbar">
           <div className="col-sm-3 col-sm-offset-1">
@@ -9,10 +10,7 @@ export default class Menu extends Component {
           </div>
           <div className="col-sm-7 menu">
             <ul>
-              <li className="menu-point"><a href="#">Home</a></li>
-              <li className="menu-point"><a href="#">Price</a></li>
-              <li className="menu-point"><a href="#">Album</a></li>
-              <li className="menu-point last-point"><a href="#">Contacts</a></li>
+              {menu}
             </ul>
           </div>
         </div>

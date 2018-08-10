@@ -4,7 +4,6 @@ import Pictures from './Pictures';
 export default class Content extends Component { 
   render() { 
     var request = this.props.request; 
-    console.log(request); 
     return (
       <div className="row content">
         <div className="col-sm-offset-1 col-sm-7">

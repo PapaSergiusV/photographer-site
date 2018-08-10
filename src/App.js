@@ -5,6 +5,20 @@ import Pictures from './Pictures';
 import Social from './Social';
 import Footer from './Footer';
 
+var menu = [
+  {id: 1, name: 'home'},
+  {id: 2, name: 'price'},
+  {id: 3, name: 'album'},
+  {id: 4, name: 'contacts'}
+];
+
+var homePictures = [
+  {col: 1, up: 'http://placehold.it/320x320', down: 'http://placehold.it/320x320'},
+  {col: 2, up: 'http://placehold.it/320x320', down: 'http://placehold.it/320x320'},
+  {col: 3, up: 'http://placehold.it/320x320', down: 'http://placehold.it/320x320'},
+  {col: 4, up: 'http://placehold.it/320x320', down: 'http://placehold.it/320x320'}
+];
+
 class App extends Component {
   constructor(props) { 
     super(props); 
@@ -13,9 +27,9 @@ class App extends Component {
   render() { 
     return ( 
       <div className="container-fluid"> 
-        <Navbar /> 
+        <Navbar menu={menu}/> 
         <Content request={this.state.page} /> 
-        <Pictures />
+        <Pictures pictures={homePictures}/>
         <Social />
         <Footer /> 
       </div> 
