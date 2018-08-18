@@ -6,10 +6,27 @@ import Social from './Social';
 export default class Content extends Component {
   render() {
     return (
-      <div>
+      <div ref="content">
         <ContentManager request={this.props.request} pictures={this.props.data.pictures} text={this.props.data.text} openPUW={this.props.openPUW}/>
       </div>
     );
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.request !== this.props.request)
+      this.contentAnimation();
+  }
+  contentAnimation() {
+    var elem = this.refs.content;
+    var opacity = 0.0;
+    elem.style.opacity = opacity;
+    var show = setInterval(function() {
+      opacity += 0.1;
+      if (opacity >= 1) {
+        opacity = 1;
+        clearInterval(show);
+      }
+      elem.style.opacity = opacity;
+    }, 20);
   }
 }
 
