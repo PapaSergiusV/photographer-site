@@ -7,5 +7,9 @@ export default class Footer extends Component {
         2018. Created by&nbsp; <a href="http://s-ponomarev.ru"> Ponomarev S.</a>
       </div>
     ); 
-  } 
+  }
+
+  shouldComponentUpdate() {
+    return false;
+  }
 } 

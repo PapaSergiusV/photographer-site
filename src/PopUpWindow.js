@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Animation from './Animation';
 
 export default class PopUpWindow extends Component {
   constructor(props) {
@@ -45,34 +46,12 @@ export default class PopUpWindow extends Component {
     }
     event.stopPropagation();
   }
+
   componentDidMount() {
-    this.openPUW(this);
-  }
-  // Pop-up window animation
-  openPUW() {
-    var elem = this.refs.PUW;
-    var opacity = 0.0;
-    elem.style.opacity = opacity;
-    var show = setInterval(function() {
-      opacity += 0.1;
-      if (opacity >= 1) {
-        opacity = 1;
-        clearInterval(show);
-      }
-      elem.style.opacity = opacity;
-    }, 50);
+    Animation.openWindow(this.refs.PUW); // Pop-up window animation
   }
   closePUW(props) {
-    var elem = this.refs.PUW;
-    var opacity = 1.0;
-    var hide = setInterval(function() {
-      opacity -= 0.1;
-      if (opacity <= 0) {
-        opacity = 0;
-        clearInterval(hide);
-        props.close();  // Вызов функции из App изменяющей состояние открытия окна в App
-      }
-      elem.style.opacity = opacity;
-    }, 20);
+    Animation.closeWindow(this.refs.PUW);
+    setTimeout(props.close, 300);  // Вызов функции из App изменяющей состояние открытия окна в App
   }
 }

@@ -5,8 +5,9 @@ export default class Menu extends Component {
     super(props);
     this.toPage = this.toPage.bind(this);
   }
+
   render() { 
-    var menu = this.props.menu.map(x => <li key={x.id} onClick={this.toPage} className="menu-point">{x.name}</li>); 
+    var menu = this.props.menu.map(x => <li key={x.id} onClick={this.toPage} className="menu-point">{x.name}</li>);
     return (
         <div className="row navbar">
           <div className="col-sm-3 col-sm-offset-1">
@@ -20,7 +21,12 @@ export default class Menu extends Component {
         </div>
     ); 
   } 
+
   toPage(event) {
     this.props.toPage(event.target.innerHTML.toString());
+  }
+
+  shouldComponentUpdate() {
+    return false;
   }
 } 

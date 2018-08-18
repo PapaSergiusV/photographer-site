@@ -42,7 +42,7 @@ class App extends Component {
     this.closePUW = this.closePUW.bind(this);
     this.openPUW = this.openPUW.bind(this);
   } 
-  render() { 
+  render() {
     return ( 
       <div className="container-fluid"> 
         {this.state.PUWIsOpen ? <PopUpWindow close={this.closePUW} pictures={data.pictures} id={this.state.PUWPicId} /> : null }
@@ -53,7 +53,8 @@ class App extends Component {
     );
   } 
   toPage(page) {
-    this.setState({ page: page });
+    if (page !== this.state.page)
+      this.setState({ page: page });
   }
   closePUW() {
     this.setState({ PUWIsOpen: false });

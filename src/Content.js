@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Text from './Text';
 import Pictures from './Pictures';
 import Social from './Social';
+import Animation from './Animation';
 
 export default class Content extends Component {
   render() {
@@ -11,22 +12,14 @@ export default class Content extends Component {
       </div>
     );
   }
+
   componentDidUpdate(prevProps) {
-    if (prevProps.request !== this.props.request)
-      this.contentAnimation();
+    if (prevProps.request !== this.props.request)   // Проверка осталась на случай перестройки приложения. При релизе удалить!
+      Animation.openWindow(this.refs.content, 200); // Pop-up window animation
   }
-  contentAnimation() {
-    var elem = this.refs.content;
-    var opacity = 0.0;
-    elem.style.opacity = opacity;
-    var show = setInterval(function() {
-      opacity += 0.1;
-      if (opacity >= 1) {
-        opacity = 1;
-        clearInterval(show);
-      }
-      elem.style.opacity = opacity;
-    }, 20);
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.request !== this.props.request;
   }
 }
 
