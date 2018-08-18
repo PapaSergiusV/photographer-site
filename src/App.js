@@ -50,7 +50,7 @@ class App extends Component {
         <Content request={this.state.page} data={data} openPUW={this.openPUW} />
         <Footer /> 
       </div> 
-    ); // Menu - передать функцию для изменения содержимого контекста, Content - передать значение, что открывать 
+    );
   } 
   toPage(page) {
     this.setState({ page: page });
