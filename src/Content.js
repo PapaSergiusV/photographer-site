@@ -3,12 +3,19 @@ import Text from './Text';
 import Pictures from './Pictures';
 import Social from './Social';
 import Animation from './Animation';
+import Contacts from './Contacts';
 
 export default class Content extends Component {
   render() {
     return (
       <div ref="content">
-        <ContentManager request={this.props.request} pictures={this.props.data.pictures} text={this.props.data.text} openPUW={this.props.openPUW}/>
+        <ContentManager 
+          request={this.props.request} 
+          pictures={this.props.data.pictures} 
+          text={this.props.data.text} 
+          openPUW={this.props.openPUW}
+          holder={this.props.holder}
+        />
         <Social holder={this.props.data.holder} />
       </div>
     );
@@ -43,7 +50,7 @@ function ContentManager(props) {
     content[0] = 'Price';
   }
   else if (props.request === 'contacts') {
-    content[0] = 'Contacts';
+    content[0] = <Contacts key={0} holder={props.holder} />;
   }
   return (
     <div className="row content">
