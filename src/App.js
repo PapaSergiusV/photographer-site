@@ -5,13 +5,24 @@ import Content from './Content';
 import PopUpWindow from './PopUpWindow';
 
 var data = {
-  holder : {
+  holder: {
     firstName: 'John',
     lastName: 'Smith',
     vk: 'https://vk.com',
     instagram: 'https://instagram.com',
     any: '',
-    phone: '8-999-888-77-66'
+    phone: '8-999-888-77-66',
+    address: 'New Yourk city, Brooklyn'
+  },
+  price: {
+    about: 'Text for example',
+    point: [
+      {id: 1, about: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', price: 1900},
+      {id: 2, about: 'Voluptate sapiente id distinctio eaque, ea deserunt eius aut tempora', price: 1500},
+      {id: 3, about: 'Dolorem iste a quas nihil, dolorum esse quos enim! Dolorem placeat, tempore.', price: 2000},
+      {id: 4, about: 'Dolorum esse quos enim! Dolorem placeat', price: 2400},
+      {id: 5, about: 'Sapiente id distinctio eaque, ea deserunt eius aut', price: 3400},
+    ]
   },
   menu: [
     {id: 1, name: 'home'},
@@ -50,26 +61,35 @@ class App extends Component {
     this.closePUW = this.closePUW.bind(this);
     this.openPUW = this.openPUW.bind(this);
   } 
+
   render() {
     return ( 
       <div className="container-fluid"> 
-        {this.state.PUWIsOpen ? <PopUpWindow close={this.closePUW} pictures={data.pictures} id={this.state.PUWPicId} /> : null }
+        {this.state.PUWIsOpen ? <PopUpWindow close={this.closePUW} pictures={data.pictures.slice(0, this.state.page === 'home' ? 6 : data.pictures.length)} id={this.state.PUWPicId} /> : null }
         <Navbar menu={data.menu} toPage={this.toPage} holder={data.holder} /> 
         <Content request={this.state.page} data={data} openPUW={this.openPUW} />
         <Footer /> 
       </div> 
     );
   } 
+
   toPage(page) {
     if (page !== this.state.page)
       this.setState({ page: page });
   }
+
   closePUW() {
     this.setState({ PUWIsOpen: false });
   }
+  
   openPUW(event) {
-    var id = parseInt(event.nativeEvent.toElement.id.toString().match(/(\d+)/i)[0], 10);
-    this.setState({ PUWIsOpen: true, PUWPicId: id });
+    try {
+      var id = parseInt(event.nativeEvent.toElement.id.toString().match(/(\d+)/i)[0], 10);
+      this.setState({ PUWIsOpen: true, PUWPicId: id });
+    }
+    catch(error) {
+      console.log(error);
+    }
   }
 } 
 

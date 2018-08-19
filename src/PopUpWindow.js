@@ -61,11 +61,13 @@ function settingSwitches(PUW) {
   var img = container.childNodes[0];
   var sw = container.childNodes[1];
   var relSides = container.scrollHeight / container.scrollWidth;
-  if (relSides > 1) {
-    img.style.height = 'auto';
-    img.style.width = 'auto';
-  }
-  else if (relSides > img.scrollHeight / img.scrollWidth) {
+  // if (false) {//relSides > 1) {
+  //   console.log("relSides > 1")
+  //   img.style.height = 'auto';
+  //   img.style.width = 'auto';
+  // }
+  // else 
+  if (relSides > img.scrollHeight / img.scrollWidth) {
     img.style.height = 'auto';
     img.style.width = '100%';
   }

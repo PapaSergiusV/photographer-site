@@ -4,6 +4,7 @@ import Pictures from './Pictures';
 import Social from './Social';
 import Animation from './Animation';
 import Contacts from './Contacts';
+import Price from './Price';
 
 export default class Content extends Component {
   render() {
@@ -11,10 +12,8 @@ export default class Content extends Component {
       <div ref="content">
         <ContentManager 
           request={this.props.request} 
-          pictures={this.props.data.pictures} 
-          text={this.props.data.text} 
+          data={this.props.data} 
           openPUW={this.props.openPUW}
-          holder={this.props.holder}
         />
         <Social holder={this.props.data.holder} />
       </div>
@@ -33,25 +32,30 @@ export default class Content extends Component {
 
 function ContentManager(props) {
   var content = [];
+
   if (props.request === 'home') {
     content[0] = (
       <div key={0} className="col-sm-offset-1 col-sm-6">
-        <Pictures request={props.request} pictures={props.pictures} count={6} openPUW={props.openPUW} />
+        <Pictures request={props.request} pictures={props.data.pictures} count={6} openPUW={props.openPUW} />
       </div>);
-    content[1] = (<Text key={1} request={props.request} text={props.text} />);
+    content[1] = (<Text key={1} request={props.request} text={props.data.text} />);
   }
+
   else if (props.request === 'album') {
     content[0] = (
       <div key={0} className="col-xs-12">
-        <Pictures request={props.request} pictures={props.pictures} count={props.pictures.length} openPUW={props.openPUW} />
+        <Pictures request={props.request} pictures={props.data.pictures} count={props.data.pictures.length} openPUW={props.openPUW} />
       </div>);
   }
+
   else if (props.request === 'price') {
-    content[0] = 'Price';
+    content[0] = <Price price={props.data.price}/>;
   }
+
   else if (props.request === 'contacts') {
-    content[0] = <Contacts key={0} holder={props.holder} />;
+    content[0] = <Contacts key={0} holder={props.data.holder} />;
   }
+
   return (
     <div className="row content">
       {content}
