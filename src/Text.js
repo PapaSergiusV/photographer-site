@@ -7,21 +7,11 @@ export default class Content extends Component {
     //if (this.props.request !== 'home') {
     //}
     return (
-      <div className="row content">
-        <div className="col-sm-offset-1 col-sm-7">
-          <div className="central-text">
-            <div>
-              <h1 className="h1">{titleTransform(text[i].title)}</h1>
-              <p>{text[i].text}</p>
-            </div>
-          </div>
-        </div>
+      <div className="col-sm-4">
+        <h1 className="h1">About</h1>
+        <p className="first-p">{text[i].title}</p>
+        <p>{text[i].text}</p>
       </div>
     ); //на каждый тип страницы будет импортироваться определенный класс из папки 
   } 
 } 
-
-function titleTransform(text) {
-  // Создать функцию, преобразующую заголовок в стиль Camel
-  return text;
-}

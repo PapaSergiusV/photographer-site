@@ -3,27 +3,20 @@ import React, { Component } from 'react';
 export default class Pictures extends Component {
   render() {
     var pictures = [];
-    for (var i = 0; i < this.props.count / 2; i++) {
-      var up = (
-        <div className="picture">
-          <img alt="фото альбома" src={this.props.pictures[i * 2].path} id={'pic' + (i * 2)} />
+    pictures[0] = [];
+    pictures[1] = [];
+    pictures[2] = [];
+    for (var i = 0; i < this.props.count; i++) 
+      pictures[i % 3][Math.floor(i / 3)] = <img alt="фото альбома" src={this.props.pictures[i].path} id={'pic' + i} key={i} />;
+    var colls = [];
+    for (var j = 0; j < 3; j++) 
+      colls[j] = <div key={j} className="col-sm-4">{pictures[j]}</div>;
+    return (
+      <div>
+        <h1 className="h1">My works</h1>
+        <div className="pictures" onClick={this.props.openPUW}>
+          {colls}
         </div>
-      );
-      var down = (
-        <div className="picture">
-          <img alt="фото альбома" src={this.props.pictures[i * 2 + 1].path} id={'pic' + (i * 2 + 1)} />
-        </div>
-      );
-      pictures[i] = (
-        <div key={this.props.pictures[i].id} className="col-md-3 col-sm-4 col-xs-6 noMarg">
-          {up}
-          {down}
-        </div>
-      );
-    }
-    return(
-      <div className="row pictures" onClick={this.props.openPUW}>
-        {pictures}
       </div>
     );
   }
