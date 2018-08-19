@@ -10,19 +10,13 @@ export default class PopUpWindow extends Component {
   render() {
     return (
       <div ref="PUW" className="PUWindow" onClick={this.closePUW.bind(this, this.props)}>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-10 col-sm-offset-1 col-xs-12">
-              <div className="PUWContainer" onClick={this.eventPUW}>
-                <img src={this.state.path} alt="Приближенное фото" />
-                <div className="row switch">
-                  <div className="col-xs-3"><div className="switch-field" id="toPrev"></div></div>
-                  <div className="col-xs-3"></div>
-                  <div className="col-xs-3"></div>
-                  <div className="col-xs-3"><div className="switch-field" id="toNext">></div></div>
-                </div>
-              </div>
-            </div>
+        <div className="PUWContainer">
+          <img src={this.state.path} alt="Приближенное фото" />
+          <div className="switch" onClick={this.eventPUW}>
+            <div className="col-xs-3"><div className="switch-field" id="toPrev"><i className="fas fa-angle-left"></i></div></div>
+            <div className="col-xs-3"></div>
+            <div className="col-xs-3"></div>
+            <div className="col-xs-3"><div className="switch-field" id="toNext"><i className="fas fa-angle-right"></i></div></div>
           </div>
         </div>
       </div>
@@ -48,10 +42,33 @@ export default class PopUpWindow extends Component {
   }
 
   componentDidMount() {
+    settingSwitches(this.refs.PUW);
     Animation.openWindow(this.refs.PUW); // Pop-up window animation
   }
+
+  componentDidUpdate() {
+    settingSwitches(this.refs.PUW);
+  }
+
   closePUW(props) {
     Animation.closeWindow(this.refs.PUW);
     setTimeout(props.close, 300);  // Вызов функции из App изменяющей состояние открытия окна в App
   }
+}
+
+function settingSwitches(PUW) {
+  var container = PUW.childNodes[0];
+  var img = container.childNodes[0];
+  var sw = container.childNodes[1];
+  var relSides = container.scrollHeight / container.scrollWidth;
+  if (relSides > 1) {
+    img.style.height = 'auto';
+    img.style.width = 'auto';
+  }
+  else if (relSides > img.scrollHeight / img.scrollWidth) {
+    img.style.height = 'auto';
+    img.style.width = '100%';
+  }
+  sw.style.height = img.scrollHeight + 'px';
+  sw.style.width = img.scrollWidth + 'px';
 }

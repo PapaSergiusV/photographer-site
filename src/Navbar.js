@@ -7,18 +7,19 @@ export default class Menu extends Component {
   }
 
   render() { 
-    var menu = this.props.menu.map(x => <li key={x.id} onClick={this.toPage} className="menu-point">{x.name}</li>);
+    var menu = this.props.menu.map(x => <div key={x.id} onClick={this.toPage} className="col-xs-3 menu-point">{x.name}</div>);
     return (
-        <div className="row navbar">
-          <div className="col-sm-3 col-sm-offset-1">
-            <h2 className="h2">Website name</h2>
-          </div>
-          <div className="col-sm-7 menu">
-            <ul>
-              {menu}
-            </ul>
-          </div>
+      <div>
+        <div className="title">
+          <h1 className="h1">
+            <i className="fas fa-camera-retro"></i>&nbsp;{this.props.holder.firstName} <span>{this.props.holder.lastName}</span>
+          </h1>
+          <p>photographer</p>
         </div>
+        <div className="row navbar">
+          {menu}
+        </div>
+      </div>
     ); 
   } 
 

@@ -4,9 +4,9 @@ export default class Social extends Component {
   render() {
     return(
       <div className="row social">
-        <a href="">|Vk|</a>
-        <a href="">|In|</a>
-        <a href="">|Fb|</a>
+        <a href={this.props.holder.instagram}><i className="fab fa-instagram"></i></a>
+        <a href={this.props.holder.vk}><i className="fab fa-vk"></i></a>
+        <a href={this.props.holder.any}><i className="fab fa-whatsapp"></i></a>
       </div>
     );
   }
