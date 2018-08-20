@@ -1,0 +1,21 @@
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\bin\Debug\netcoreapp2.0\Photographer website.deps.json
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\bin\Debug\netcoreapp2.0\Photographer website.runtimeconfig.json
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\bin\Debug\netcoreapp2.0\Photographer website.runtimeconfig.dev.json
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\bin\Debug\netcoreapp2.0\Photographer website.dll
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\bin\Debug\netcoreapp2.0\Photographer website.pdb
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\obj\Debug\netcoreapp2.0\Photographer website.csproj.CoreCompileInputs.cache
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\obj\Debug\netcoreapp2.0\Photographer website.AssemblyInfoInputs.cache
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\obj\Debug\netcoreapp2.0\Photographer website.AssemblyInfo.cs
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\obj\Debug\netcoreapp2.0\Photographer website.dll
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\ToDoDesk\obj\Debug\netcoreapp2.0\Photographer website.pdb
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\bin\Debug\netcoreapp2.0\Photographer website.deps.json
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\bin\Debug\netcoreapp2.0\Photographer website.runtimeconfig.json
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\bin\Debug\netcoreapp2.0\Photographer website.runtimeconfig.dev.json
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\bin\Debug\netcoreapp2.0\Photographer website.dll
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\bin\Debug\netcoreapp2.0\Photographer website.pdb
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\obj\Debug\netcoreapp2.0\Photographer website.csprojAssemblyReference.cache
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\obj\Debug\netcoreapp2.0\Photographer website.csproj.CoreCompileInputs.cache
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\obj\Debug\netcoreapp2.0\Photographer website.AssemblyInfoInputs.cache
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\obj\Debug\netcoreapp2.0\Photographer website.AssemblyInfo.cs
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\obj\Debug\netcoreapp2.0\Photographer website.dll
+C:\Users\Сергей\Documents\Программирование\Web\ASP.NET & React Template\Photographer website\obj\Debug\netcoreapp2.0\Photographer website.pdb
