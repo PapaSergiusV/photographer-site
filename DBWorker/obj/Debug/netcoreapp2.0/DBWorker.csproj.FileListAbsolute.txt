@@ -1,0 +1,11 @@
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\bin\Debug\netcoreapp2.0\DBWorker.deps.json
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\bin\Debug\netcoreapp2.0\DBWorker.runtimeconfig.json
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\bin\Debug\netcoreapp2.0\DBWorker.runtimeconfig.dev.json
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\bin\Debug\netcoreapp2.0\DBWorker.dll
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\obj\Debug\netcoreapp2.0\DBWorker.csprojAssemblyReference.cache
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\obj\Debug\netcoreapp2.0\DBWorker.csproj.CoreCompileInputs.cache
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\obj\Debug\netcoreapp2.0\DBWorker.AssemblyInfoInputs.cache
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\obj\Debug\netcoreapp2.0\DBWorker.AssemblyInfo.cs
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\bin\Debug\netcoreapp2.0\DBWorker.pdb
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\obj\Debug\netcoreapp2.0\DBWorker.dll
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\DBWorker\obj\Debug\netcoreapp2.0\DBWorker.pdb
