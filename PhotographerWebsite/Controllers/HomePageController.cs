@@ -36,5 +36,10 @@ namespace PhotographerWebsite.Controllers
             }
             return File(new FileStream(path, FileMode.Open), "Application/txt", name);
         }
+
+        public Email Test(string str)
+        {
+            return new Email { Name="Rick Sanchez", Phone="C137", Text=str };
+        }
     }
 }
