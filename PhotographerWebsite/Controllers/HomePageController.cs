@@ -37,9 +37,9 @@ namespace PhotographerWebsite.Controllers
             return File(new FileStream(path, FileMode.Open), "Application/txt", name);
         }
 
-        public Email Test(string str)
+        public FileResult Test(string str)
         {
-            return new Email { Name="Rick Sanchez", Phone="C137", Text=str };
+            return File("~/data.json", "Application/txt");
         }
     }
 }

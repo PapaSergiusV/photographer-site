@@ -5,8 +5,6 @@ import Content from './Content.jsx';
 import PopUpWindow from './PopUpWindow.jsx';
 import Data from './Data.jsx';
 
-var data = Data.getData();
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -14,14 +12,15 @@ class App extends Component {
         this.toPage = this.toPage.bind(this);
         this.closePUW = this.closePUW.bind(this);
         this.openPUW = this.openPUW.bind(this);
+        this.data = Data.getData();
     }
 
     render() {
         return (
             <div className="container-fluid">
-                {this.state.PUWIsOpen ? <PopUpWindow close={this.closePUW} pictures={data.pictures.slice(0, this.state.page === 'home' ? 6 : data.pictures.length)} id={this.state.PUWPicId} /> : null}
-                <Navbar menu={data.menu} toPage={this.toPage} holder={data.holder} />
-                <Content request={this.state.page} data={data} openPUW={this.openPUW} />
+                {this.state.PUWIsOpen ? <PopUpWindow close={this.closePUW} pictures={this.data.pictures.slice(0, this.state.page === 'home' ? 6 : this.data.pictures.length)} id={this.state.PUWPicId} /> : null}
+                <Navbar menu={this.data.menu} toPage={this.toPage} holder={this.data.holder} />
+                <Content request={this.state.page} data={this.data} openPUW={this.openPUW} />
                 <Footer />
             </div>
         );
