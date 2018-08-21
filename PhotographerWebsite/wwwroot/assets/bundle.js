@@ -21152,17 +21152,13 @@ var Contacts = function (_Component) {
                     _react2.default.createElement(
                         "form",
                         { action: "/HomePage/EmailHandler", method: "post" },
-                        _react2.default.createElement("input", { type: "text", name: "email.Name", value: "Name" }),
-                        _react2.default.createElement("input", { type: "text", name: "email.Phone", value: "88002000600" }),
-                        _react2.default.createElement(
-                            "textarea",
-                            { name: "email.Text" },
-                            "I hope you're working, bitch!"
-                        ),
+                        _react2.default.createElement("input", { type: "text", name: "email.Name", placeholder: "Name" }),
+                        _react2.default.createElement("input", { type: "text", name: "email.Phone", placeholder: "Phone" }),
+                        _react2.default.createElement("textarea", { name: "email.Text" }),
                         _react2.default.createElement(
                             "button",
                             { className: "button", type: "submit" },
-                            "Submit"
+                            "Send"
                         )
                     )
                 )

@@ -25,10 +25,10 @@ export default class Contacts extends Component {
                 <div className="col-sm-5">
                     <h1 className="h1">Write me</h1>
                     <form action="/HomePage/EmailHandler" method="post">
-                        <input type="text" name="email.Name" value="Name" />
-                        <input type="text" name="email.Phone" value="88002000600" />
-                        <textarea name="email.Text">I hope you're working, bitch!</textarea>
-                        <button className="button" type="submit">Submit</button>
+                        <input type="text" name="email.Name" placeholder="Name" />
+                        <input type="text" name="email.Phone" placeholder="Phone" />
+                        <textarea name="email.Text"></textarea>
+                        <button className="button" type="submit">Send</button>
                     </form>
                 </div>
             </div>

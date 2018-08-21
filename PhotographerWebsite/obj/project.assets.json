@@ -13257,11 +13257,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\PhotographerWebsite\\PhotographerWebsite\\PhotographerWebsite.csproj",
+      "projectUniqueName": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\Новая папка\\photographer-site\\PhotographerWebsite\\PhotographerWebsite.csproj",
       "projectName": "PhotographerWebsite",
-      "projectPath": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\PhotographerWebsite\\PhotographerWebsite\\PhotographerWebsite.csproj",
+      "projectPath": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\Новая папка\\photographer-site\\PhotographerWebsite\\PhotographerWebsite.csproj",
       "packagesPath": "C:\\Users\\Сергей\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\PhotographerWebsite\\PhotographerWebsite\\obj\\",
+      "outputPath": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\Новая папка\\photographer-site\\PhotographerWebsite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
