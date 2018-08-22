@@ -1853,6 +1853,22 @@ body {
         text-decoration: underline
     }
 
+#loading {
+    display: block;
+    color: #fefefe;
+    font-family: "Work Sans",sans-serif;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
 .img-responsive {
     display: block;
     max-width: 100%;

@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         constants = {
             getPage: '@Url.RouteUrl("default", new {controller = "HomePage", action = "Index" })'
         }
-    </script>
+    </script>*@
     <title>John Smith</title>
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
@@ -17,6 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
 </head>
 <body>
+    <div id="loading">Loading</div>
     <div id="root"></div>
     <script type="text/javascript" src="@Url.Content("~/assets/bundle.js")"></script>
 </body>

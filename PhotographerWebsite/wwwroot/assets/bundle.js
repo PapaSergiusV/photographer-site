@@ -21378,12 +21378,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Loading = __webpack_require__(38);
-
-var _Loading2 = _interopRequireDefault(_Loading);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Data = function () {
@@ -21394,7 +21388,6 @@ var Data = function () {
     _createClass(Data, null, [{
         key: 'getData',
         value: function getData() {
-            _Loading2.default.addLoading();
             var xhr = new XMLHttpRequest();
             var body = 'str=' + encodeURIComponent('getData');
             xhr.open("POST", "/HomePage/GetData", false);
@@ -21404,7 +21397,7 @@ var Data = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) data = JSON.parse(xhr.responseText);
             };
             xhr.send(body);
-            _Loading2.default.removeLoading();
+            document.getElementById("loading").remove();
             return data;
         }
     }]);
@@ -21413,52 +21406,6 @@ var Data = function () {
 }();
 
 exports.default = Data;
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Loading = function () {
-    function Loading() {
-        _classCallCheck(this, Loading);
-    }
-
-    _createClass(Loading, null, [{
-        key: "addLoading",
-        value: function addLoading() {
-            //alert("loading");
-            //var div = document.createElement("div");
-            //div.innerHTML = "Loading";
-            //div.style.color = "white";
-            //div.setAttribute("id", "loading");
-            //document.body.insertBefore(div, document.body.children[0]);
-            //console.log(Date.now());
-            //console.log(document.body.children);
-        }
-    }, {
-        key: "removeLoading",
-        value: function removeLoading() {
-            //document.getElementById("loading").remove();
-            //alert("end loading");
-            //console.log(Date.now());
-        }
-    }]);
-
-    return Loading;
-}();
-
-exports.default = Loading;
 
 /***/ })
 /******/ ]);
