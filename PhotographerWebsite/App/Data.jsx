@@ -1,6 +1,9 @@
-﻿export default class Data {
+﻿import Loading from './Loading.jsx';
+
+export default class Data {
 
     static getData() {
+        Loading.addLoading();
         var xhr = new XMLHttpRequest();
         var body = 'str=' + encodeURIComponent('getData');
         xhr.open("POST", "/HomePage/GetData", false);
@@ -11,7 +14,7 @@
                 data = JSON.parse(xhr.responseText);
         });
         xhr.send(body);
+        Loading.removeLoading();
         return data;
     }
-
 }

@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
 export default class Menu extends Component { 
-  constructor(props) {
-    super(props);
-    this.toPage = this.toPage.bind(this);
-  }
-
   render() { 
     var menu = this.props.menu.map(x => <div key={x.id} onClick={this.toPage} className="col-xs-3 menu-point">{x.name}</div>);
     return (
@@ -23,7 +18,7 @@ export default class Menu extends Component {
     ); 
   } 
 
-  toPage(event) {
+  toPage = (event) => {
     this.props.toPage(event.target.innerHTML.toString());
   }
 

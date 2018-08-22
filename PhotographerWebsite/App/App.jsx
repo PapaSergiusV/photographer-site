@@ -9,9 +9,6 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = { page: 'home', PUWIsOpen: false, PUWPicId: 0 };
-        this.toPage = this.toPage.bind(this);
-        this.closePUW = this.closePUW.bind(this);
-        this.openPUW = this.openPUW.bind(this);
         this.data = Data.getData();
         this.menu = [
             { id: 1, name: "home" },
@@ -32,16 +29,16 @@ class App extends Component {
         );
     }
 
-    toPage(page) {
+    toPage = (page) => {
         if (page !== this.state.page)
             this.setState({ page: page });
     }
 
-    closePUW() {
+    closePUW = () => {
         this.setState({ PUWIsOpen: false });
     }
 
-    openPUW(event) {
+    openPUW = (event) => {
         try {
             var id = parseInt(event.nativeEvent.toElement.id.toString().match(/(\d+)/i)[0], 10);
             this.setState({ PUWIsOpen: true, PUWPicId: id });

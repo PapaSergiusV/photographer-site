@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import Animation from './Animation.jsx';
 
 export default class PopUpWindow extends Component {
-  constructor(props) {
-    super(props);
-    this.eventPUW = this.eventPUW.bind(this);
-    this.state = { path: this.props.pictures[this.props.id].path, id: this.props.id };
-  }
+
+  state = { path: this.props.pictures[this.props.id].path, id: this.props.id };
+
   render() {
     return (
       <div ref="PUW" className="PUWindow" onClick={this.closePUW.bind(this, this.props)}>
@@ -23,7 +21,7 @@ export default class PopUpWindow extends Component {
     );
   }
   // The function for handle clicks on Pop-up window
-  eventPUW(event) {
+  eventPUW = (event) => {
     var to = event.nativeEvent.toElement.id;
     var idNow = this.state.id;
     if (to === 'toNext') {
