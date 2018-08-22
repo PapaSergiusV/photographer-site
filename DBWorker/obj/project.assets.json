@@ -3565,9 +3565,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\photographer-site\\DBWorker\\DataAccessLayer.csproj",
-      "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\photographer-site\\DBWorker\\DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\photographer-site\\DBWorker\\DBWorker.csproj",
+      "projectName": "DBWorker",
+      "projectPath": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\photographer-site\\DBWorker\\DBWorker.csproj",
       "packagesPath": "C:\\Users\\Сергей\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Сергей\\Documents\\Программирование\\Web\\photographer-site\\DBWorker\\obj\\",
       "projectStyle": "PackageReference",
