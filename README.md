@@ -2,4 +2,4 @@
 
 Проект сайта-альбома для фотографа.
 
-ASP.NET + React
+React + ASP.NET + MsSql
