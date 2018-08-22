@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotographerWebsite", "PhotographerWebsite\PhotographerWebsite.csproj", "{F444126F-E555-47E7-B5F5-C4EE53DC8522}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBWorker", "DBWorker\DBWorker.csproj", "{3C3549F7-D6AE-4527-A0C4-E15C53DD70BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBWorker", "DBWorker\DBWorker.csproj", "{3C3549F7-D6AE-4527-A0C4-E15C53DD70BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

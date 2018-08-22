@@ -20485,6 +20485,7 @@ var App = function (_Component) {
         _this.closePUW = _this.closePUW.bind(_this);
         _this.openPUW = _this.openPUW.bind(_this);
         _this.data = _Data2.default.getData();
+        _this.menu = [{ id: 1, name: "home" }, { id: 2, name: "album" }, { id: 3, name: "price" }, { id: 4, name: "contacts" }];
         return _this;
     }
 
@@ -20495,7 +20496,7 @@ var App = function (_Component) {
                 'div',
                 { className: 'container-fluid' },
                 this.state.PUWIsOpen ? _react2.default.createElement(_PopUpWindow2.default, { close: this.closePUW, pictures: this.data.pictures.slice(0, this.state.page === 'home' ? 6 : this.data.pictures.length), id: this.state.PUWPicId }) : null,
-                _react2.default.createElement(_Navbar2.default, { menu: this.data.menu, toPage: this.toPage, holder: this.data.holder }),
+                _react2.default.createElement(_Navbar2.default, { menu: this.menu, toPage: this.toPage, holder: this.data.holder }),
                 _react2.default.createElement(_Content2.default, { request: this.state.page, data: this.data, openPUW: this.openPUW }),
                 _react2.default.createElement(_Footer2.default, null)
             );
@@ -20664,7 +20665,7 @@ var Footer = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                { className: "row footer", onClick: this.testT.bind(this) },
+                { className: "row footer" },
                 "2018. Created by\xA0 ",
                 _react2.default.createElement(
                     "a",
@@ -20677,20 +20678,6 @@ var Footer = function (_Component) {
         key: "shouldComponentUpdate",
         value: function shouldComponentUpdate() {
             return false;
-        }
-    }, {
-        key: "testT",
-        value: function testT() {
-            var xhr = new XMLHttpRequest();
-            //var body = 'str=' + encodeURIComponent('getData');
-            xhr.open("POST", "/HomePage/Test", true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            //var data = null;
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) console.log(xhr.responseText);
-            };
-            xhr.send(null);
-            //return data;
         }
     }]);
 
@@ -20807,7 +20794,7 @@ function ContentManager(props) {
       _react2.default.createElement(_Pictures2.default, { request: props.request, pictures: props.data.pictures, count: props.data.pictures.length, openPUW: props.openPUW })
     );
   } else if (props.request === 'price') {
-    content[0] = _react2.default.createElement(_Price2.default, { price: props.data.price });
+    content[0] = _react2.default.createElement(_Price2.default, { key: 0, price: props.data.price });
   } else if (props.request === 'contacts') {
     content[0] = _react2.default.createElement(_Contacts2.default, { key: 0, holder: props.data.holder });
   }
@@ -20857,9 +20844,6 @@ var Content = function (_Component) {
     key: "render",
     value: function render() {
       var text = this.props.text;
-      var i = 0;
-      //if (this.props.request !== 'home') {
-      //}
       return _react2.default.createElement(
         "div",
         { className: "col-sm-4" },
@@ -20871,14 +20855,14 @@ var Content = function (_Component) {
         _react2.default.createElement(
           "p",
           { className: "first-p" },
-          text[i].title
+          text.title
         ),
         _react2.default.createElement(
           "p",
           null,
-          text[i].text
+          text.text
         )
-      ); //на каждый тип страницы будет импортироваться определенный класс из папки 
+      );
     }
   }]);
 
@@ -21204,19 +21188,23 @@ var Price = function (_Component) {
   _createClass(Price, [{
     key: "render",
     value: function render() {
-      var price = this.props.price.point.map(function (x) {
+      var price = this.props.price.map(function (x) {
         return _react2.default.createElement(
-          "p",
-          { key: x.id },
+          "div",
+          null,
           _react2.default.createElement(
-            "div",
-            { className: "col-xs-10" },
-            x.about
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "col-xs-2" },
-            x.price
+            "p",
+            { key: x.id },
+            _react2.default.createElement(
+              "div",
+              { className: "col-xs-10" },
+              x.about
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "col-xs-2" },
+              x.price
+            )
           )
         );
       });
@@ -21231,13 +21219,9 @@ var Price = function (_Component) {
         _react2.default.createElement(
           "p",
           { className: "first-p" },
-          this.props.price.about
+          "Text for example"
         ),
-        _react2.default.createElement(
-          "div",
-          null,
-          price
-        )
+        price
       );
     }
   }]);
