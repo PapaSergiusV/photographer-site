@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using PhotographerWebsite.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using PhotographerWebsite.Entities;
+using AutoMapper;
+using DBWorker;
 
 namespace PhotographerWebsite.Controllers
 {
@@ -37,9 +40,17 @@ namespace PhotographerWebsite.Controllers
             return File(new FileStream(path, FileMode.Open), "Application/txt", name);
         }
 
-        public FileResult Test(string str)
+        public FileResult GetData(string str)
         {
             return File("~/data.json", "Application/txt");
+        }
+
+        public string Test()
+        {
+            //PicturePW[] x; 
+            Mapper.Initialize(cfg => cfg.CreateMap<DBWorker.Classes.Picture, PicturePW>());
+            var x = Mapper.Map<PicturePW>(DBWorker.CommLayer.CommLayer.GetPicture());
+            return x.Path;
         }
     }
 }

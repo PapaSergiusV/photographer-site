@@ -20664,7 +20664,7 @@ var Footer = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                { className: "row footer" },
+                { className: "row footer", onClick: this.testT.bind(this) },
                 "2018. Created by\xA0 ",
                 _react2.default.createElement(
                     "a",
@@ -20677,6 +20677,20 @@ var Footer = function (_Component) {
         key: "shouldComponentUpdate",
         value: function shouldComponentUpdate() {
             return false;
+        }
+    }, {
+        key: "testT",
+        value: function testT() {
+            var xhr = new XMLHttpRequest();
+            //var body = 'str=' + encodeURIComponent('getData');
+            xhr.open("POST", "/HomePage/Test", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //var data = null;
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) console.log(xhr.responseText);
+            };
+            xhr.send(null);
+            //return data;
         }
     }]);
 
@@ -21395,7 +21409,7 @@ var Data = function () {
         value: function getData() {
             var xhr = new XMLHttpRequest();
             var body = 'str=' + encodeURIComponent('getData');
-            xhr.open("POST", "/HomePage/Test", false);
+            xhr.open("POST", "/HomePage/GetData", false);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             var data = null;
             xhr.onreadystatechange = function () {
