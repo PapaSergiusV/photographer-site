@@ -20,10 +20,10 @@ namespace DBWorker.CommLayer
             };
         }
 
-        public static Picture GetPicture()
+        public static IEnumerable<Picture> GetPictures()
         {
             db = new Operations();
-            return db.Pictures.Read(1);
+            return db.Pictures.ReadAll();
         }
     }
 }

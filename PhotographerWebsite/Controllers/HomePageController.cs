@@ -45,12 +45,20 @@ namespace PhotographerWebsite.Controllers
             return File("~/data.json", "Application/txt");
         }
 
-        public string Test()
+        //public IEnumerable<PicturePW> Test()
+        //{
+        //    //PicturePW[] x; 
+        //    Mapper.Initialize(cfg => cfg.CreateMap<DBWorker.Classes.Picture, PicturePW>());
+        //    var x = Mapper.Map<IEnumerable<PicturePW>>(DBWorker.CommLayer.CommLayer.GetPictures());
+        //    return x;
+        //}
+
+        public DataPW Test()
         {
             //PicturePW[] x; 
-            Mapper.Initialize(cfg => cfg.CreateMap<DBWorker.Classes.Picture, PicturePW>());
-            var x = Mapper.Map<PicturePW>(DBWorker.CommLayer.CommLayer.GetPicture());
-            return x.Path;
+            Mapper.Initialize(cfg => cfg.CreateMap<DBWorker.CommLayer.Data, DataPW>());
+            var x = Mapper.Map<DataPW>(DBWorker.CommLayer.CommLayer.GetData());
+            return x;
         }
     }
 }
