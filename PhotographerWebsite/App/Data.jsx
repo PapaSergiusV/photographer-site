@@ -3,7 +3,7 @@
     static getData() {
         var xhr = new XMLHttpRequest();
         var body = 'str=' + encodeURIComponent('getData');
-        xhr.open("POST", "/HomePage/Test", false);
+        xhr.open("POST", "/HomePage/GetData", false);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         var data = null;
         xhr.onreadystatechange = (function () {

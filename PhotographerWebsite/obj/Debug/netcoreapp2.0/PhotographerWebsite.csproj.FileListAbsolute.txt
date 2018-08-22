@@ -53,3 +53,6 @@ C:\Users\Сергей\Documents\Программирование\Web\photographe
 C:\Users\Сергей\Documents\Программирование\Web\photographer-site\PhotographerWebsite\obj\Debug\netcoreapp2.0\PhotographerWebsite.AssemblyInfo.cs
 C:\Users\Сергей\Documents\Программирование\Web\photographer-site\PhotographerWebsite\obj\Debug\netcoreapp2.0\PhotographerWebsite.dll
 C:\Users\Сергей\Documents\Программирование\Web\photographer-site\PhotographerWebsite\obj\Debug\netcoreapp2.0\PhotographerWebsite.pdb
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\PhotographerWebsite\bin\Debug\netcoreapp2.0\DBWorker.dll
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\PhotographerWebsite\bin\Debug\netcoreapp2.0\DBWorker.pdb
+C:\Users\Сергей\Documents\Программирование\Web\photographer-site\PhotographerWebsite\obj\Debug\netcoreapp2.0\PhotographerWebsite.csproj.CopyComplete

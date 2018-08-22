@@ -49,7 +49,7 @@ function ContentManager(props) {
   }
 
   else if (props.request === 'price') {
-    content[0] = <Price price={props.data.price}/>;
+      content[0] = <Price key={0} price={props.data.price}/>;
   }
 
   else if (props.request === 'contacts') {
