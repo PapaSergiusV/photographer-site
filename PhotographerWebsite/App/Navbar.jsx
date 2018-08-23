@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Menu extends Component { 
+    static propTypes = {
+        toPage: PropTypes.func,
+        menu: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.number.isRequired,
+                name: PropTypes.string.isRequired
+            })
+        ).isRequired,
+        holder: PropTypes.shape({
+            firstName: PropTypes.string.isRequired,
+            lastName: PropTypes.string.isRequired
+        }).isRequired
+    }
+
   render() { 
     var menu = this.props.menu.map(x => <div key={x.id} onClick={this.toPage} className="col-xs-3 menu-point">{x.name}</div>);
     return (

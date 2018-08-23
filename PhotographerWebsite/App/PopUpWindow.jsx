@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import Animation from './Animation.jsx';
+import PropTypes from 'prop-types';
 
 export default class PopUpWindow extends Component {
+    static propTypes = {
+        close: PropTypes.func.isRequired,
+        id: PropTypes.number.isRequired,
+        pictures: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.number,
+                path: PropTypes.string.isRequired
+            })
+        ).isRequired
+    }
 
   state = { path: this.props.pictures[this.props.id].path, id: this.props.id };
 

@@ -4,8 +4,11 @@ import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 import PopUpWindow from './PopUpWindow.jsx';
 import Data from './Data.jsx';
+import PropTypes from 'prop-types';
 
 class App extends Component {
+    static propTypes = {};
+
     constructor(props) {
         super(props);
         this.state = { page: 'home', PUWIsOpen: false, PUWPicId: 0 };
