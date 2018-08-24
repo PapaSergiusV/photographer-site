@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class Content extends Component { 
+export default class HomeText extends Component {
+    static propTypes = {
+        text: PropTypes.shape({
+            title: PropTypes.string,
+            text: PropTypes.string
+        }).isRequired
+    }
+
     render() { 
         var text = this.props.text; 
         return (

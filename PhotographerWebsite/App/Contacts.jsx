@@ -1,6 +1,16 @@
 ﻿import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Contacts extends Component {
+    static propTypes = {
+        holder: PropTypes.shape({
+            address: PropTypes.string.isRequired,
+            phone: PropTypes.string.isRequired,
+            linkVk: PropTypes.string.isRequired,
+            linkInstagram: PropTypes.string.isRequired
+        }).isRequired
+    }
+
     render() {
         return (
             <div>
@@ -12,13 +22,11 @@ export default class Contacts extends Component {
                             <p><i className="fas fa-mobile-alt"></i></p>
                             <p><i className="fab fa-vk"></i></p>
                             <p><i className="fab fa-instagram"></i></p>
-                            <p><i className="fab fa-viber"></i></p>
                         </div>
                         <div className="col-xs-10">
                             <p>{this.props.holder.phone}</p>
-                            <p><a href={this.props.holder.vk}>vk.com</a></p>
-                            <p><a href={this.props.holder.instagram}>instagram.com</a></p>
-                            <p>{this.props.holder.phone}</p>
+                            <p><a href={this.props.holder.linkVk}>vk.com</a></p>
+                            <p><a href={this.props.holder.linkInstagram}>instagram.com</a></p>
                         </div>
                     </div>
                 </div>

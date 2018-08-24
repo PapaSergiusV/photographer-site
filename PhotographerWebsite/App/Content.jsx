@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import Text from './Text.jsx';
+import HomeText from './HomeText.jsx';
 import Pictures from './Pictures.jsx';
 import Social from './Social.jsx';
 import Animation from './Animation.jsx';
 import Contacts from './Contacts.jsx';
 import Price from './Price.jsx';
+import PropTypes from 'prop-types';
 
 export default class Content extends Component {
+    static propTypes = {
+        request: PropTypes.string.isRequired,
+        openPUW: PropTypes.func.isRequired,
+        data: PropTypes.shape({
+            holder: PropTypes.object.isRequired,
+            pictures: PropTypes.arrayOf(PropTypes.object).isRequired,
+            text: PropTypes.object.isRequired
+        }).isRequired
+    }
+
     render() {
         return (
             <div ref="content">
@@ -36,15 +47,15 @@ function ContentManager(props) {
     if (props.request === 'home') {
         content[0] = (
             <div key={0} className="col-sm-offset-1 col-sm-6">
-                <Pictures request={props.request} pictures={props.data.pictures} count={6} openPUW={props.openPUW} />
+                <Pictures pictures={props.data.pictures} count={6} openPUW={props.openPUW} />
             </div>
         );
-        content[1] = (<Text key={1} request={props.request} text={props.data.text} />);
+        content[1] = (<HomeText key={1} text={props.data.text} />);
     }
     else if (props.request === 'album') {
         content[0] = (
             <div key={0} className="col-xs-12">
-                <Pictures request={props.request} pictures={props.data.pictures} count={props.data.pictures.length} openPUW={props.openPUW} />
+                <Pictures pictures={props.data.pictures} count={props.data.pictures.length} openPUW={props.openPUW} />
             </div>);
     }
     else if (props.request === 'price') {
