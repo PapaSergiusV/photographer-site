@@ -1,4 +1,4 @@
 # Visual Studio 2015 cache/options directory
 .vs/
 Migrations/
-bundle.js
+PresentationLayer/wwwroot/assets/
